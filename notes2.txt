@@ -1,0 +1,18 @@
+create place holder to feed in data
+//loop through thirty scans in random order
+place holder for fireing rate(rest) (66x1199) (throw away last value)
+place holder for change in firing rate(dr)(66x1199)
+tf.constant for tr and identity matrix
+weight matrix as a tf.variable(random intitalization)(66x66)(random vector length 66^2/2 -> run triangle method)(0 diagonal)
+implement the equation
+loss = tf.mean_squared_error(predicted, dr) + tf.norm(weight matrix* length_matrix)
+use adam optimizer(set a learning rate)
+run network
+start a loop say 10000
+	randomly select one of 30 runs (this is rest: sample(all_rest_scans)-> outputs one of them)
+	calculate dr as difference between adjacent timepoints
+	[my_weights, session_loss]= session.run([outputs = weight matrix, loss], [placeholder_name: value])
+	1%100 == 0 print session_loss
+
+
+plt.imshow(my_weights)
